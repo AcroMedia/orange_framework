@@ -1,0 +1,5 @@
+# Schema for the configuration files of the theme.
+
+orange_framework.settings:
+  type: theme_settings
+  label: 'Orange Framework Settings'

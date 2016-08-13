@@ -1,0 +1,1 @@
+style.css is compiled from the SASS files. Don't directly modify the style.css file, edit the .scss files in the SASS directory instead.

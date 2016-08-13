@@ -1,0 +1,48 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/style.css: { media: all }
+  js:
+    js/custom/script.js: {}
+  dependencies:
+    - core/jquery
+    - orange_framework/flexslider
+
+flexslider:
+  version: 1.x
+  js:
+    js/contrib/jquery.flexslider-min.js: {}
+  dependencies:
+    - core/jquery
+
+hoverintent:
+  version: 1.x
+  js:
+    js/contrib/jquery.hoverIntent.minified.js: {}
+  dependencies:
+    - core/jquery
+
+bootstrap:
+  version: 1.x
+  js:
+    bootstrap/js/affix.js: {}
+    bootstrap/js/alert.js: {}
+    bootstrap/js/tooltip.js: {}
+    bootstrap/js/modal.js: {}
+    bootstrap/js/tab.js: {}
+    bootstrap/js/transition.js: {}
+    bootstrap/js/dropdown.js: {}
+    bootstrap/js/carousel.js: {}
+    bootstrap/js/popover.js: {}
+    bootstrap/js/scrollspy.js: {}
+  dependencies:
+    - core/jquery
+
+maintenance_page:
+  version: 1.x
+  css:
+    theme:
+      css/maintenance-page.css: { media: all }
+  dependencies:
+    - system/maintenance

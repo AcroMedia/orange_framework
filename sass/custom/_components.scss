@@ -1,0 +1,155 @@
+/**
+ * Components
+ */
+
+/* -- Image Gallery -- */
+
+.image-gallery {
+  clear: both;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+.image-gallery__slider {
+  position: relative;
+
+  ul.slides {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: none;
+      float: left;
+      margin: 0;
+      padding: 0;
+      background: none;
+    }
+  }
+}
+.image-gallery__main-image-wrapper {
+  position: relative;
+}
+.image-gallery__caption {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 13px 21px;
+  width: 100%;
+  color: #999;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+.image-gallery__main-image {
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.image-gallery-nav {
+
+}
+.image-gallery-nav__slider {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 78px;
+
+  ul.slides {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: none;
+      float: left;
+      margin: 0;
+      padding: 0;
+      background: none;
+    }
+  }
+
+  ul.flex-direction-nav {
+    display: none !important;
+  }
+}
+.image-gallery-nav__thumb {
+  position: relative;
+  margin: 0 10px 0 0;
+  padding: 0;
+  width: 90px;
+  height: 60px;
+  border: 3px solid #999;
+  opacity: 0.5;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.flex-active-slide .image-gallery-nav__thumb {
+  opacity: 1.0;
+}
+
+
+/* -- Accordion -- */
+
+.base-accordion {
+
+}
+
+
+.base-accordion__header:hover {
+
+}
+.active .base-accordion__header {
+  color: #000;
+}
+.base-accordion__content {
+  display: none;
+  margin: 0;
+  padding: 12px 0 9px 30px;
+
+  p:last-child {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/**
+ * Accordion
+ */
+
+.base-accordion {
+  clear: both;
+  margin: 0 0 28px 0;
+  padding: 0;
+
+  .base-accordion__item {
+    clear: both;
+  }
+
+  .base-accordion__header {
+    display: block;
+    margin: 0;
+    padding: 12px 0;
+    font-size: 20px;
+    line-height: 1.0;
+    text-decoration: none;
+    outline: none;
+  }
+
+  .base-accordion__content {
+    padding: 20px;
+  }
+}
+
+

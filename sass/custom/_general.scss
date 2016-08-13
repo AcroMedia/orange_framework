@@ -1,0 +1,40 @@
+/**
+ * General
+ */
+
+html {
+  font-size: 100%;
+}
+
+html,
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: #000;
+  background: #fff;
+}
+
+a {
+  -webkit-transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
+  -moz-transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
+  -ms-transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
+  -o-transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
+  transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
+}
+
+.clear-break {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  line-height: 0;
+}
+
+.img-right {
+  float: right;
+  display: block;
+  margin: 0 0 20px 20px;
+  padding: 0;
+}

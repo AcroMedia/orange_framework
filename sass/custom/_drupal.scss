@@ -1,0 +1,1157 @@
+/**
+ * Drupal Specific
+ */
+
+/**
+ * @file
+ * Styles for link buttons and action links.
+ */
+
+.action-links {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+}
+[dir="rtl"] .action-links {
+  /* This is required to win over specificity of [dir="rtl"] ul */
+  margin-right: 0;
+}
+.action-links li {
+  display: inline-block;
+  margin: 0 0.3em;
+}
+.action-links li:first-child {
+  margin-left: 0; /* LTR */
+}
+[dir="rtl"] .action-links li:first-child {
+  margin-left: 0.3em;
+  margin-right: 0;
+}
+.button-action {
+  display: inline-block;
+  line-height: 160%;
+  padding: 0.2em 0.5em 0.3em;
+  text-decoration: none;
+}
+.button-action:before {
+  content: '+';
+  font-weight: 900;
+  margin-left: -0.1em; /* LTR */
+  padding-right: 0.2em; /* LTR */
+}
+[dir="rtl"] .button-action:before {
+  margin-left: 0;
+  margin-right: -0.1em;
+  padding-left: 0.2em;
+  padding-right: 0;
+}
+
+/**
+ * @file
+ * Styling for the Book module.
+ */
+
+.book-navigation .menu {
+  padding-bottom: 0;
+  padding-top: 1em;
+}
+.book-navigation .book-pager {
+  margin: 0;
+  overflow: auto;
+  padding: 0.5em 0;
+}
+.book-pager__item {
+  display: inline-block;
+  list-style-type: none;
+  vertical-align: top;
+}
+.book-pager__item--previous {
+  text-align: left; /* LTR */
+  width: 45%;
+}
+[dir="rtl"] .book-pager__item--previous {
+  float: right;
+  text-align: right;
+}
+.book-pager__item--center {
+  text-align: center;
+  width: 8%;
+}
+.book-pager__item--next {
+  float: right; /* LTR */
+  text-align: right; /* LTR */
+  width: 45%;
+}
+[dir="rtl"] .book-pager__item--next {
+  float: left;
+  text-align: left;
+}
+
+/**
+ * @file
+ * Styles for breadcrumbs.
+ */
+
+.breadcrumb {
+  padding-bottom: 0.5em;
+}
+.breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+[dir="rtl"] .breadcrumb ol {
+  /* This is required to win over specificity of [dir="rtl"] ol */
+  margin-right: 0;
+}
+.breadcrumb li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* IE8 does not support :not() and :last-child. */
+.breadcrumb li:before {
+  content: ' \BB ';
+}
+.breadcrumb li:first-child:before {
+  content: none;
+}
+
+/**
+ * @file
+ * Visual styles for buttons.
+ */
+
+.button,
+.image-button {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+.button:first-child,
+.image-button:first-child {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/**
+ * @file
+ * Visual styles for collapsible fieldsets.
+ */
+
+.collapse-processed > summary {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.collapse-processed > summary:before {
+  background: url(../gfx/icons/menu-expanded.png) 0px 100% no-repeat; /* LTR */
+  content: "";
+  float: left; /* LTR */
+  height: 1em;
+  width: 1em;
+}
+[dir="rtl"] .collapse-processed > summary:before {
+  background-position: 100% 100%;
+  float: right;
+}
+.collapse-processed:not([open]) > summary:before {
+  background-position: 25% 35%; /* LTR */
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+[dir="rtl"] .collapse-processed:not([open]) > summary:before {
+  background-position: 75% 35%;
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/**
+ * @file
+ * Inline items.
+ */
+
+.container-inline label:after,
+.container-inline .label:after {
+  content: ':';
+}
+.form-type-radios .container-inline label:after {
+  content: '';
+}
+.form-type-radios .container-inline .form-type-radio {
+  margin: 0 1em;
+}
+.container-inline .form-actions,
+.container-inline.form-actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/**
+ * @file
+ * Collapsible details.
+ *
+ * @see collapse.js
+ * @see http://nicolasgallagher.com/css-background-image-hacks/
+ */
+
+details {
+  border: 1px solid #ccc;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+details > .details-wrapper {
+  padding: 0.5em 1.5em;
+}
+/* @todo Regression: The summary of uncollapsible details are no longer
+     vertically aligned with the .details-wrapper in browsers without native
+     details support. */
+summary {
+  cursor: pointer;
+  padding: 0.2em 0.5em;
+}
+
+/**
+ * @file
+ * Presentational styles for Drupal dialogs.
+ */
+
+.ui-dialog {
+  position: absolute;
+  z-index: 1260;
+  overflow: visible;
+  color: #000;
+  background: #fff;
+  border: solid 1px #ccc;
+  padding: 0;
+}
+@media all and (max-width: 48em) { /* 768px */
+  .ui-dialog {
+    width: 92% !important;
+  }
+}
+.ui-dialog .ui-dialog-titlebar {
+  font-weight: bold;
+  background: #f3f4ee;
+  border-style: solid;
+  border-radius: 0;
+  border-width: 0 0 1px 0;
+  border-color: #ccc;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+  border: 0;
+  background: none;
+}
+.ui-dialog .ui-dialog-buttonpane {
+  margin-top: 0;
+  background: #f3f4ee;
+  padding: .3em 1em;
+  border-width: 1px 0 0 0;
+  border-color: #ccc;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  margin: 0;
+  padding: 0;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-button-text-only .ui-button-text {
+  padding: 0;
+}
+
+/* Form action buttons are moved in dialogs. Remove empty space. */
+.ui-dialog .ui-dialog-content .form-actions {
+  padding: 0;
+  margin: 0;
+}
+.ui-dialog .ajax-progress-throbber {
+  /* Can't do center:50% middle: 50%, so approximate it for a typical window size. */
+  left: 49%;
+  position: fixed;
+  top: 48.5%;
+  z-index: 1000;
+  background-color: #232323;
+  background-image: url(loading-small.gif);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 7px;
+  height: 24px;
+  opacity: 0.9;
+  padding: 4px;
+  width: 24px;
+}
+.ui-dialog .ajax-progress-throbber .throbber,
+.ui-dialog .ajax-progress-throbber .message {
+  display: none;
+}
+
+/**
+ * @file
+ * General styles for dropbuttons.
+ */
+
+.js .dropbutton-widget {
+  background-color: white;
+  border: 1px solid #cccccc;
+}
+.js .dropbutton-widget:hover {
+  border-color: #b8b8b8;
+}
+.dropbutton .dropbutton-action > * {
+  padding: 0.1em 0.5em;
+  white-space: nowrap;
+}
+.dropbutton .secondary-action {
+  border-top: 1px solid #e8e8e8;
+}
+.dropbutton-multiple .dropbutton {
+  border-right: 1px solid #e8e8e8; /* LTR */
+}
+[dir="rtl"] .dropbutton-multiple .dropbutton {
+  border-left: 1px solid #e8e8e8;
+  border-right: 0 none;
+}
+.dropbutton-multiple .dropbutton .dropbutton-action > * {
+  margin-right: 0.25em; /* LTR */
+}
+[dir="rtl"] .dropbutton-multiple .dropbutton .dropbutton-action > * {
+  margin-left: 0.25em;
+  margin-right: 0;
+}
+
+/**
+ * @file
+ * Visual styles for exposed filters.
+ */
+
+.exposed-filters .filters {
+  float: left; /* LTR */
+  margin-right: 1em; /* LTR */
+}
+[dir="rtl"] .exposed-filters .filters {
+  float: right;
+  margin-left: 1em;
+  margin-right: 0;
+}
+.exposed-filters .form-item {
+  margin: 0 0 0.1em 0;
+  padding: 0;
+}
+.exposed-filters .form-item label {
+  float: left; /* LTR */
+  font-weight: normal;
+  width: 10em;
+}
+[dir="rtl"] .exposed-filters .form-item label {
+  float: right;
+}
+.exposed-filters .form-select {
+  width: 14em;
+}
+/* Current filters */
+.exposed-filters .current-filters {
+  margin-bottom: 1em;
+}
+.exposed-filters .current-filters .placeholder {
+  font-style: normal;
+  font-weight: bold;
+}
+.exposed-filters .additional-filters {
+  float: left; /* LTR */
+  margin-right: 1em; /* LTR */
+}
+[dir="rtl"] .exposed-filters .additional-filters {
+  float: right;
+  margin-left: 1em;
+  margin-right: 0;
+}
+
+/**
+ * @file
+ * Visual styles for fields.
+ */
+
+.field__label {
+  font-weight: bold;
+}
+.field--label-inline .field__label,
+.field--label-inline .field__items {
+  float: left; /*LTR*/
+}
+.field--label-inline .field__label,
+.field--label-inline > .field__item,
+.field--label-inline .field__items {
+  padding-right: 0.5em;
+}
+[dir="rtl"] .field--label-inline .field__label,
+[dir="rtl"] .field--label-inline .field__items {
+  padding-left: 0.5em;
+  padding-right: 0;
+}
+.field--label-inline .field__label::after {
+  content: ':';
+}
+
+/**
+ * @file
+ * Default style for file module.
+ */
+
+/* File icons.*/
+
+.file {
+  padding-left: 20px; /* LTR */
+  display: inline-block;
+  min-height: 16px;
+  background-repeat: no-repeat;
+  background-position: left center; /* LTR */
+}
+[dir="rtl"] .file {
+  padding-left: inherit;
+  padding-right: 20px;
+  background-position: right center;
+}
+.file--general,
+.file--application-octet-stream {
+  background-image: url(../gfx/icons/application-octet-stream.png);
+}
+.file--package-x-generic {
+  background-image: url(../gfx/icons/package-x-generic.png);
+}
+.file--x-office-spreadsheet {
+  background-image: url(../gfx/icons/x-office-spreadsheet.png);
+}
+.file--x-office-document {
+  background-image: url(../gfx/icons/x-office-document.png);
+}
+.file--x-office-presentation {
+  background-image: url(../gfx/icons/x-office-presentation.png);
+}
+.file--text-x-script {
+  background-image: url(../gfx/icons/text-x-script.png);
+}
+.file--text-html {
+  background-image: url(../gfx/icons/text-html.png);
+}
+.file--text-plain {
+  background-image: url(../gfx/icons/text-plain.png);
+}
+.file--application-pdf {
+  background-image: url(../gfx/icons/application-pdf.png);
+}
+.file--application-x-executable {
+  background-image: url(../gfx/icons/application-x-executable.png);
+}
+.file--audio {
+  background-image: url(../gfx/icons/audio-x-generic.png);
+}
+.file--video {
+  background-image: url(../gfx/icons/video-x-generic.png);
+}
+.file--text {
+  background-image: url(../gfx/icons/text-x-generic.png);
+}
+.file--image {
+  background-image: url(../gfx/icons/image-x-generic.png);
+}
+
+/**
+ * @file
+ * Visual styles for form components.
+ */
+
+form .field-multiple-table {
+  margin: 0;
+}
+form .field-multiple-table .field-multiple-drag {
+  width: 30px;
+  padding-right: 0; /*LTR*/
+}
+[dir="rtl"] form .field-multiple-table .field-multiple-drag {
+  padding-left: 0;
+}
+form .field-multiple-table .field-multiple-drag .tabledrag-handle {
+  padding-right: .5em; /*LTR*/
+}
+[dir="rtl"] form .field-multiple-table .field-multiple-drag .tabledrag-handle {
+  padding-right: 0;
+  padding-left: .5em;
+}
+form .field-add-more-submit {
+  margin: .5em 0 0;
+}
+
+/**
+ * Markup generated by Form API.
+ */
+.form-item,
+.form-actions {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+tr.odd .form-item,
+tr.even .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.form-composite > .fieldset-wrapper > .description,
+.form-item .description {
+  font-size: 0.85em;
+}
+label.option {
+  display: inline;
+  font-weight: normal;
+}
+.form-composite > legend,
+.label {
+  display:inline;
+  font-size: inherit;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+.form-checkboxes .form-item,
+.form-radios .form-item {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+.form-type-radio .description,
+.form-type-checkbox .description {
+  margin-left: 2.4em; /* LTR */
+}
+[dir="rtl"] .form-type-radio .description,
+[dir="rtl"] .form-type-checkbox .description {
+  margin-left: 0;
+  margin-right: 2.4em;
+}
+.marker {
+  color: #e00;
+}
+abbr.tabledrag-changed,
+abbr.ajax-changed {
+  border-bottom: none;
+}
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 2px solid red;
+}
+
+/* Inline error messages. */
+.form-item--error-message:before {
+  content: '';
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: sub;
+  background: url(../gfx/icons/error.svg) no-repeat;
+  background-size: contain;
+}
+
+/**
+ * @file
+ * Styling for the Forum module.
+ */
+
+.forum__description {
+  font-size: 0.9em;
+  margin: 0.5em;
+}
+.forum__icon {
+  background-image: url(../gfx/icons/forum-icons.png);
+  background-repeat: no-repeat;
+  float: left; /* LTR */
+  height: 24px;
+  margin: 0 9px 0 0; /* LTR */
+  width: 24px;
+}
+[dir="rtl"] .forum__icon {
+  float: right;
+  margin: 0 0 0 9px;
+}
+.forum__title {
+  overflow: hidden;
+}
+.forum .indented {
+  margin-left: 20px; /* LTR */
+}
+[dir="rtl"] .forum .indented {
+  margin-left: 0;
+  margin-right: 20px;
+}
+.forum__topic-status--new {
+  background-position: -24px 0;
+}
+.forum__topic-status--hot {
+  background-position: -48px 0;
+}
+.forum__topic-status--hot-new {
+  background-position: -72px 0;
+}
+.forum__topic-status--sticky {
+  background-position: -96px 0;
+}
+.forum__topic-status--closed {
+  background-position: -120px 0;
+}
+
+/**
+ * @file
+ * Visual styles for icons.
+ */
+
+.icon-help {
+  background: url(../gfx/icons/help.png) 0 50% no-repeat; /* LTR */
+  padding: 1px 0 1px 20px; /* LTR */
+}
+[dir="rtl"] .icon-help {
+  background-position: 100% 50%;
+  padding: 1px 20px 1px 0;
+}
+.feed-icon {
+  background: url(../gfx/icons/feed.svg) no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+
+/**
+ * Image upload widget.
+ */
+.image-preview {
+  float: left; /* LTR */
+  padding: 0 10px 10px 0; /* LTR */
+}
+[dir="rtl"] .image-preview {
+  float: right;
+  padding: 0 0 10px 10px;
+}
+.image-widget-data {
+  float: left; /* LTR */
+}
+[dir="rtl"] .image-widget-data {
+  float: right;
+}
+.image-widget-data .text-field {
+  width: auto;
+}
+
+
+/**
+ * @file
+ * Basic styling for comment module.
+ */
+
+/**
+ * Indent threaded comments.
+ */
+.indented {
+  margin-left: 25px; /* LTR */
+}
+[dir="rtl"] .indented {
+  margin-left: 0;
+  margin-right: 25px;
+}
+
+/**
+ * @file
+ * Visual styles for inline forms.
+ */
+
+.form--inline .form-item {
+  float: left; /* LTR */
+  margin-right: 0.5em; /* LTR */
+}
+[dir="rtl"] .form--inline .form-item {
+  float: right;
+  margin-right: 0;
+  margin-left: 0.5em;
+}
+/* This is required to win over specificity of [dir="rtl"] .form--inline .form-item */
+[dir="rtl"] .views-filterable-options-controls .form-item {
+  margin-right: 2%;
+}
+.form--inline .form-item-separator {
+  margin-top: 2.3em;
+  margin-right: 1em; /* LTR */
+  margin-left: 0.5em; /* LTR */
+}
+[dir="rtl"] .form--inline .form-item-separator {
+  margin-right: 0.5em;
+  margin-left: 1em;
+}
+.form--inline .form-actions {
+  clear: left; /* LTR */
+}
+[dir="rtl"] .form--inline .form-actions {
+  clear: right;
+}
+
+/**
+ * @file
+ * Visual styles for item list.
+ */
+
+.item-list .title {
+  font-weight: bold;
+}
+.item-list ul {
+  margin: 0 0 0.75em 0;
+  padding: 0;
+}
+.item-list li {
+  margin: 0 0 0.25em 1.5em; /* LTR */
+  padding: 0;
+}
+[dir="rtl"] .item-list li {
+  margin: 0 1.5em 0.25em 0;
+}
+
+/**
+ * Comma separated lists.
+ */
+.item-list--comma-list {
+  display: inline;
+}
+.item-list--comma-list .item-list__comma-list,
+.item-list__comma-list li,
+[dir="rtl"] .item-list--comma-list .item-list__comma-list,
+[dir="rtl"] .item-list__comma-list li {
+  margin: 0;
+}
+
+/**
+ * @file
+ * Style another element as a link.
+ */
+
+button.link {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+label button.link {
+  font-weight: bold;
+}
+
+/**
+ * @file
+ * Visual styles for links.
+ */
+
+ul.inline,
+ul.links.inline {
+  display: inline;
+  padding-left: 0; /* LTR */
+}
+[dir="rtl"] ul.inline,
+[dir="rtl"] ul.links.inline {
+  padding-right: 0;
+  padding-left: 15px;
+}
+ul.inline li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 0.5em;
+}
+ul.links a.is-active {
+
+}
+
+/**
+ * @file
+ * Visual styles for menu.
+ */
+
+[dir="rtl"] ul.menu {
+  margin-left: 0;
+  margin-right: 1em;
+  text-align: right;
+}
+[dir="rtl"] .menu-item--collapsed {
+  list-style-image: url(../gfx/icons/menu-collapsed-rtl.png);
+}
+
+/**
+ * @file
+ * Styles for system messages.
+ */
+
+.messages {
+  margin: 0 0 20px 0;
+  padding: 15px 20px 15px 35px; /* LTR */
+  background: no-repeat 10px 17px;  /* LTR */
+  border: 1px solid;
+  border-width: 1px 1px 1px 0;  /* LTR */
+  border-radius: 2px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+[dir="rtl"] .messages {
+  border-width: 1px 0 1px 1px;
+  background-position: right 10px top 17px;
+  padding-left: 20px;
+  padding-right: 35px;
+  text-align: right;
+}
+.messages + .messages {
+  margin-top: 1.538em;
+}
+.messages__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.messages__item + .messages__item {
+  margin-top: 0.769em;
+}
+/* See .color-success in Seven's colors.css */
+.messages--status {
+  color: #325e1c;
+  background-color: #f3faef;
+  border-color: #c9e1bd #c9e1bd #c9e1bd transparent;  /* LTR */
+  background-image: url(../gfx/icons/check.svg);
+  box-shadow: -8px 0 0 #77b259; /* LTR */
+}
+[dir="rtl"] .messages--status {
+  border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
+  box-shadow: 8px 0 0 #77b259;
+  margin-left: 0;
+}
+/* See .color-warning in Seven's colors.css */
+.messages--warning {
+  background-color: #fdf8ed;
+  background-image: url(../gfx/icons/warning.svg);
+  border-color: #f4daa6 #f4daa6 #f4daa6 transparent;  /* LTR */
+  color: #734c00;
+  box-shadow: -8px 0 0 #e09600; /* LTR */
+}
+[dir="rtl"] .messages--warning {
+  border-color: #f4daa6 transparent #f4daa6 #f4daa6;
+  box-shadow: 8px 0 0 #e09600;
+}
+/* See .color-error in Seven's colors.css */
+.messages--error {
+  background-color: #fcf4f2;
+  color: #a51b00;
+  background-image: url(../gfx/icons/error.svg);
+  border-color: #f9c9bf #f9c9bf #f9c9bf transparent;  /* LTR */
+  box-shadow: -8px 0 0 #e62600; /* LTR */
+}
+[dir="rtl"] .messages--error {
+  border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
+  box-shadow: 8px 0 0 #e62600;
+}
+.messages--error p.error {
+  color: #a51b00;
+}
+
+/**
+ * @file
+ * Markup generated by #type 'more_link'.
+ */
+
+.more-link {
+  display: block;
+  text-align: right; /* LTR */
+}
+[dir="rtl"] .more-link {
+  text-align: left;
+}
+
+/**
+ * @file
+ * Visual styles for nodes.
+ */
+
+.node--unpublished {
+  background-color: #fff4f4;
+}
+
+/**
+ * @file
+ * Visual styles for pager.
+ */
+
+.pager__items {
+  clear: both;
+  text-align: center;
+}
+.pager__item {
+  display: inline;
+  padding: 0.5em;
+}
+.pager__item.is-active {
+  font-weight: bold;
+}
+
+/**
+ * @file
+ * Visual styles for progress bar.
+ *
+ * @see progress.js
+ */
+
+.progress__track {
+  border-color: #b3b3b3;
+  border-radius: 10em;
+  background-color: #f2f1eb;
+  background-image: -webkit-linear-gradient(#e7e7df, #f0f0f0);
+  background-image:         linear-gradient(#e7e7df, #f0f0f0);
+  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.16);
+}
+.progress__bar {
+  border: 1px #07629a solid;
+  background: #057ec9;
+  background-image:
+  -webkit-linear-gradient( top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15) ),
+  -webkit-linear-gradient( left top,
+    #0094f0 0%,
+    #0094f0 25%,
+    #007ecc 25%,
+    #007ecc 50%,
+    #0094f0 50%,
+    #0094f0 75%,
+    #0094f0 100% );
+  background-image:
+  -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15)), -webkit-linear-gradient(left top, #0094f0 0%, #0094f0 25%, #007ecc 25%, #007ecc 50%, #0094f0 50%, #0094f0 75%, #0094f0 100%);
+  background-image:
+  linear-gradient( to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15) ),
+  linear-gradient( to right bottom,
+    #0094f0 0%,
+    #0094f0 25%,
+    #007ecc 25%,
+    #007ecc 50%,
+    #0094f0 50%,
+    #0094f0 75%,
+    #0094f0 100% );
+  background-size: 40px 40px;
+  margin-top: -1px;
+  margin-left: -1px; /* LTR */
+  padding: 0 1px;
+  height: 16px;
+  border-radius: 10em;
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
+[dir="rtl"] .progress__bar {
+  margin-left: 0;
+  margin-right: -1px;
+  animation-direction: reverse;
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+}
+
+/**
+ * Progress bar animations.
+ */
+@-webkit-keyframes animate-stripes {
+  0% {background-position: 0 0, 0 0;} 100% {background-position: 0 0, -80px 0;}
+}
+@-ms-keyframes animate-stripes {
+  0% {background-position: 0 0, 0 0;} 100% {background-position: 0 0, -80px 0;}
+}
+@keyframes animate-stripes {
+  0% {background-position: 0 0, 0 0;} 100% {background-position: 0 0, -80px 0;}
+}
+
+/**
+ * @file
+ * Stylesheet for results generated by the Search module.
+ */
+
+.search-results {
+  list-style: none;
+}
+
+/**
+ * @file
+ * Visual styles for table drag.
+ */
+
+tr.drag {
+  background-color: #fffff0;
+}
+tr.drag-previous {
+  background-color: #ffd;
+}
+body div.tabledrag-changed-warning {
+  margin-bottom: 0.5em;
+}
+
+/**
+ * @file
+ * Table select behavior.
+ *
+ * @see tableselect.js
+ */
+
+tr.selected td {
+  background: #ffc;
+}
+td.checkbox,
+th.checkbox {
+  text-align: center;
+}
+[dir="rtl"] td.checkbox,
+[dir="rtl"] th.checkbox {
+  /* This is required to win over specificity of [dir="rtl"] td */
+  text-align: center;
+}
+
+/**
+ * @file
+ * Table sort indicator.
+ */
+
+th.is-active img {
+  display: inline;
+}
+td.is-active {
+  background-color: #ddd;
+}
+
+/**
+ * @file
+ * Visual styles for tabs.
+ */
+
+div.tabs {
+  margin: 1em 0;
+}
+ul.drupal-tabs {
+  margin: 0 0 15px 0;
+  padding: 0;
+  list-style: none;
+}
+.tabs > li {
+  display: inline-block;
+  margin: 0 0.3em 0.3em 0;
+}
+[dir="rtl"] .tabs > li {
+  margin-left: 0.3em;
+  margin-right: 0;
+}
+ul.tabs {
+  margin: 0 0 15px 0;
+  padding: 0;
+  list-style: none;
+}
+.tabs a {
+  display: block;
+  padding: 0.2em 1em;
+  text-decoration: none;
+  color: #333;
+  background: #f5f5f5;
+  @include border-radius(5px);
+}
+.tabs a.is-active {
+  color: #fff;
+  background-color: #666;
+}
+.tabs a:focus,
+.tabs a:hover {
+  color: #333;
+  background-color: #e0e0e0;
+}
+
+/**
+ * @file
+ * Visual styles for a resizable textarea.
+ */
+
+.form-textarea-wrapper textarea {
+  display: block;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/**
+ * @file
+ * Styles for Classy's modal windows.
+ */
+
+.ui-dialog--narrow {
+  max-width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+  .ui-dialog--narrow {
+    max-width: 95%;
+    min-width: 95%;
+  }
+}
+
+/**
+ * @file
+ * Theme styling for user module.
+ */
+
+/* Visual styling for the Password strength indicator */
+.password-strength__meter {
+  margin-top: 0.5em;
+  background-color: #ebeae4;
+}
+.password-strength__indicator {
+  background-color: #77b259;
+  -webkit-transition: width 0.5s ease-out;
+  transition: width 0.5s ease-out;
+}
+.password-strength__indicator.is-weak {
+  background-color: #e62600;
+}
+.password-strength__indicator.is-fair {
+  background-color: #e09600;
+}
+.password-strength__indicator.is-good {
+  background-color: #0074bd;
+}
+.password-strength__indicator.is-strong {
+  background-color: #77b259;
+}
+
+.password-confirm,
+.password-field,
+.password-strength,
+.password-confirm-match {
+  width: 55%;
+}
+
+.password-suggestions {
+  padding: 0.2em 0.5em;
+  margin: 0.7em 0;
+  max-width: 34.7em;
+  border: 1px solid #b4b4b4;
+}
+.password-suggestions ul {
+  margin-bottom: 0;
+}
+
+.confirm-parent,
+.password-parent {
+  clear: left; /* LTR */
+  margin: 0;
+  max-width: 33em;
+  overflow: hidden;
+}
+[dir="rtl"] .confirm-parent,
+[dir="rtl"] .password-parent {
+  clear: right;
+}
+
+/* Styling for the status indicator of the passwords match test.  */
+.password-confirm .ok {
+  color: #325e1c;
+  font-weight: bold;
+}
+.password-confirm .error {
+  color: #a51b00;
+  font-weight: bold;
+}
