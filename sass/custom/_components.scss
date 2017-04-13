@@ -1,9 +1,10 @@
 /**
- * Components
+ * Components.
  */
 
-/* -- Image Gallery -- */
-
+/**
+ * Image gallery.
+ */
 .image-gallery {
   clear: both;
   margin: 0 0 30px 0;
@@ -99,35 +100,9 @@
   opacity: 1.0;
 }
 
-
-/* -- Accordion -- */
-
-.base-accordion {
-
-}
-
-
-.base-accordion__header:hover {
-
-}
-.active .base-accordion__header {
-  color: #000;
-}
-.base-accordion__content {
-  display: none;
-  margin: 0;
-  padding: 12px 0 9px 30px;
-
-  p:last-child {
-    margin: 0;
-    padding: 0;
-  }
-}
-
 /**
  * Accordion
  */
-
 .base-accordion {
   clear: both;
   margin: 0 0 28px 0;
@@ -136,7 +111,6 @@
   .base-accordion__item {
     clear: both;
   }
-
   .base-accordion__header {
     display: block;
     margin: 0;
@@ -146,10 +120,18 @@
     text-decoration: none;
     outline: none;
   }
-
+  // Active item.
+  .active .base-accordion__header {
+    color: #000;
+  }
   .base-accordion__content {
+    display: none;
+    margin: 0;
     padding: 20px;
+
+    p:last-child {
+      margin: 0;
+      padding: 0;
+    }
   }
 }
-
-

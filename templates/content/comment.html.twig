@@ -84,28 +84,12 @@
   #}
   <mark class="hidden" data-comment-timestamp="{{ new_indicator_timestamp }}"></mark>
 
-  <footer class="comment__meta">
-    {{ user_picture }}
-    <p class="comment__submitted">{{ submitted }}</p>
-
-    {#
-      Indicate the semantic relationship between parent and child comments for
-      accessibility. The list is difficult to navigate in a screen reader
-      without this information.
-    #}
-    {% if parent %}
-      <p class="parent visually-hidden">{{ parent }}</p>
-    {% endif %}
-
-    {{ permalink }}
-  </footer>
+  <header class="comment__header">
+    <div class="comment__author">{{ author }}</div>
+    <div class="comment__date-created">{{ created }}</div>
+  </header>
 
   <div{{ content_attributes.addClass('content') }}>
-    {% if title %}
-      {{ title_prefix }}
-      <h3{{ title_attributes }}>{{ title }}</h3>
-      {{ title_suffix }}
-    {% endif %}
     {{ content }}
   </div>
 </article>

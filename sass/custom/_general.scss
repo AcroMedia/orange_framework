@@ -1,11 +1,9 @@
 /**
- * General
+ * General.
  */
-
 html {
   font-size: 100%;
 }
-
 html,
 body {
   position: relative;
@@ -15,15 +13,6 @@ body {
   color: #000;
   background: #fff;
 }
-
-a {
-  -webkit-transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
-  -moz-transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
-  -ms-transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
-  -o-transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
-  transition: color 0.15s linear, background-color 0.15s linear, opacity 0.15s linear;
-}
-
 .clear-break {
   clear: both;
   margin: 0;
@@ -31,10 +20,47 @@ a {
   height: 0;
   line-height: 0;
 }
-
+.img-left {
+  float: left;
+  display: block;
+  margin: 0 20px 20px 0;
+  padding: 0;
+}
 .img-right {
   float: right;
   display: block;
   margin: 0 0 20px 20px;
   padding: 0;
+}
+
+/**
+ * Typography.
+ */
+
+// Headers.
+h1,
+h2,
+h3 {
+  margin: 30px 0 10px 0;
+}
+h4,
+h5,
+h6 {
+  margin: 35px 0 5px 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
+h4,
+h5 {
+  line-height: 1.3;
+}
+
+// Content.
+p {
+  margin: 0 0 20px 0;
+  line-height: 1.8;
 }

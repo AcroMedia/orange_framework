@@ -1,20 +1,15 @@
-// Bootstrap
+// Bootstrap.
 @import '../bootstrap/bootstrap.scss';
 
-// Global
-@import '_mixins.scss';
+// Drupal.
+@import 'drupal.scss';
+@import 'comments.scss';
 
-// Drupal
-@import '_drupal.scss';
+// General.
+@import 'general.scss';
 
-// General
-@import '_general.scss';
+// Components.
+@import 'components.scss';
 
-// Components
-@import '_components.scss';
-
-// Responsive
-@import '_responsive.scss';
-
-// Print
-@import '_print.scss';
+// Print.
+@import 'print.scss';

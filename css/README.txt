@@ -1,1 +1,3 @@
-style.css is compiled from the SASS files. Don't directly modify the style.css file, edit the .scss files in the SASS directory instead.
+style.css is compiled from the Sass files.
+Don't directly modify the style.css file.
+Edit the .scss files in the Sass directory and compile style.css into this folder.

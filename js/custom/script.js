@@ -1,11 +1,8 @@
 /**
- * Custom Scripts
+ * Custom Scripts.
  */
-
-
 (function ($) {
-
-  // Tabs
+  // Tabs.
   if ($('.content-tabs').length) {
     $('.content-tabs a').click(function(e) {
       $(this).tab('show');
@@ -14,7 +11,7 @@
     })
   }
 
-  // Image Gallery
+  // Image Gallery.
   if ($('.image-gallery__slider').length) {
     $('.image-gallery-nav__slider').flexslider({
       animation: "slide",
@@ -43,7 +40,7 @@
       multipleKeyboard: true
     });
 
-    // Image Gallery Hover
+    // Image Gallery Hover.
     $(".image-gallery__slider").hover(function() {
       $(this).find('ul.flex-direction-nav').stop(true, true).fadeIn('fast');
 
@@ -57,7 +54,7 @@
     });
   }
 
-  // Accordion
+  // Accordion.
   $(".base-accordion__header").click(function(e) {
     var _this = $(this);
     var _parent = _this.parent();
@@ -71,5 +68,4 @@
 
     e.preventDefault();
   });
-
 })(jQuery);

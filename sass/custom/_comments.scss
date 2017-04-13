@@ -1,0 +1,30 @@
+/**
+ * Comments.
+ */
+.comment-form-wrapper {
+  clear: both;
+  margin: 0 0 30px 0;
+  padding: 0;
+}
+.field--name-comment-body {
+
+  // Hide text format markup.
+  .filter-wrapper {
+    display: none;
+  }
+}
+.comment {
+  clear: both;
+  margin: 0 0 30px 0;
+  padding: 0 0 30px 0;
+  border-bottom: 1px solid #ccc;
+
+  ul.links {
+    text-align: right;
+  }
+}
+.comment__date-created {
+  margin: 0 0 15px 0;
+  padding: 0;
+  font-size: 12px;
+}

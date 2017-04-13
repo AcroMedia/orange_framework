@@ -13,7 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  * Adds body classes if certain regions have content.
  */
 function orange_framework_preprocess_html(&$variables) {
-  // Region Class Examples
+  // Region class examples.
   /**
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['attributes']['class'][] = 'layout-two-sidebars';
