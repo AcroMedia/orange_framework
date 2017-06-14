@@ -2,7 +2,6 @@ name: Orange Framework
 type: theme
 description: 'Acro Media Inc. Drupal base theme.'
 package: Core
-version: '1.0.0'
 core: '8.x'
 base theme: false
 

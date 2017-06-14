@@ -1,11 +1,9 @@
 <?php
+
 /**
  * @file
  * Functions to support theming in the theme.
  */
-
-use Drupal\Core\Template\Attribute;
-use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
@@ -14,14 +12,12 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function orange_framework_preprocess_html(&$variables) {
   // Region class examples.
-  /**
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['attributes']['class'][] = 'layout-two-sidebars';
   }
   else {
     $variables['attributes']['class'][] = 'layout-no-sidebars';
   }
-  */
 }
 
 /**
@@ -32,7 +28,7 @@ function orange_framework_preprocess_node_add_list(&$variables) {
     /** @var \Drupal\node\NodeTypeInterface $type */
     foreach ($variables['content'] as $type) {
       $variables['types'][$type->id()]['label'] = $type->label();
-      $variables['types'][$type->id()]['url'] = \Drupal::url('node.add', array('node_type' => $type->id()));
+      $variables['types'][$type->id()]['url'] = \Drupal::url('node.add', ['node_type' => $type->id()]);
     }
   }
 }
@@ -47,8 +43,8 @@ function orange_framework_preprocess_block_content_add_list(&$variables) {
   if (!empty($variables['content'])) {
     foreach ($variables['content'] as $type) {
       $variables['types'][$type->id()]['label'] = $type->label();
-      $options = array('query' => \Drupal::request()->query->all());
-      $variables['types'][$type->id()]['url'] = \Drupal::url('block_content.add_form', array('block_content_type' => $type->id()), $options);
+      $options = ['query' => \Drupal::request()->query->all()];
+      $variables['types'][$type->id()]['url'] = \Drupal::url('block_content.add_form', ['block_content_type' => $type->id()], $options);
     }
   }
 }
