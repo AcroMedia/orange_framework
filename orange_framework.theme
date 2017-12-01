@@ -8,23 +8,6 @@ use Drupal\Core\Template\Attribute;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Implements hook_preprocess_HOOK() for HTML document templates.
- *
- * Adds body classes if certain regions have content.
- */
-function orange_framework_preprocess_html(&$variables) {
-  // Region class examples.
-  /**
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-    $variables['attributes']['class'][] = 'layout-two-sidebars';
-  }
-  else {
-    $variables['attributes']['class'][] = 'layout-no-sidebars';
-  }
-  */
-}
-
-/**
  * Implements hook_preprocess_HOOK() for list of available node type templates.
  */
 function orange_framework_preprocess_node_add_list(&$variables) {
@@ -50,20 +33,6 @@ function orange_framework_preprocess_block_content_add_list(&$variables) {
       $options = array('query' => \Drupal::request()->query->all());
       $variables['types'][$type->id()]['url'] = \Drupal::url('block_content.add_form', array('block_content_type' => $type->id()), $options);
     }
-  }
-}
-
-/**
- * Implements hook_preprocess_block() for block content.
- *
- * Disables contextual links for all blocks.
- */
-function orange_framework_preprocess_block(&$variables) {
-  if (isset($variables['title_suffix']['contextual_links'])) {
-    unset($variables['title_suffix']['contextual_links']);
-    unset($variables['elements']['#contextual_links']);
-
-    $variables['attributes']['class'] = array_diff($variables['attributes']['class'], ['contextual-region']);
   }
 }
 
