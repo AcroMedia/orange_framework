@@ -20,6 +20,19 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.write())
     .pipe(rename('style.css'))
     .pipe(gulp.dest('./css'));
+  gulp.src('./sass/bootstrap/{,*/}*.{scss,sass}')
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      errLogToConsole: true
+    }))
+    .pipe(postcss([
+      autoprefixer({
+        browsers: ['> 5%']
+      }),
+    ]))
+    .pipe(sourcemaps.write())
+    .pipe(rename('bootstrap.css'))
+    .pipe(gulp.dest('./css'));
 });
 
 // Create Gulp default task.
