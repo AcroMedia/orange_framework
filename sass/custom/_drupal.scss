@@ -395,14 +395,18 @@ summary {
  * Default style for file module.
  */
 
-/* File icons.*/
-
+/* File icons. */
 .file {
   padding-left: 20px; /* LTR */
   display: inline-block;
   min-height: 16px;
   background-repeat: no-repeat;
   background-position: left center; /* LTR */
+
+  // IMCE specific file item.
+  &.imce-item {
+    display: block;
+  }
 }
 [dir="rtl"] .file {
   padding-left: inherit;
