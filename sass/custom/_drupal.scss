@@ -1138,9 +1138,15 @@ ul.tabs {
   width: 55%;
 }
 
+.password-confirm,
+.password-strength {
+  margin-top: .2em;
+  margin-bottom: 0;
+}
+
 .password-suggestions {
-  padding: 0.2em 0.5em;
-  margin: 0.7em 0;
+  margin: 0;
+  padding: .9em;
   max-width: 34.7em;
   border: 1px solid #b4b4b4;
 }
@@ -1151,7 +1157,6 @@ ul.tabs {
 .confirm-parent,
 .password-parent {
   clear: left; /* LTR */
-  margin: 0;
   max-width: 33em;
   overflow: hidden;
 }
