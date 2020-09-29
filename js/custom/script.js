@@ -54,18 +54,26 @@
     });
   }
 
-  // Accordion.
-  $(".base-accordion__header").click(function(e) {
-    var _this = $(this);
-    var _parent = _this.parent();
-    var _thisBody = _this.parent().find('.base-accordion__content');
+  function attachAccordionClick() {
+    $(".base-accordion__header").click(function(e) {
+      var _this = $(this);
+      var _parent = _this.parent();
+      var _thisBody = _this.parent().find('.base-accordion__content');
 
-    _parent.toggleClass('active');
+      _parent.toggleClass('active');
 
-    _this.parent().find('.base-accordion__content').toggle('fast');
-    $('.base-accordion__content').not(_thisBody).hide('fast');
-    $('.base-accordion__item').not(_parent).removeClass('active');
+      _this.parent().find('.base-accordion__content').toggle('fast');
+      $('.base-accordion__content').not(_thisBody).hide('fast');
+      $('.base-accordion__item').not(_parent).removeClass('active');
 
-    e.preventDefault();
+      e.preventDefault();
+    });
+  }
+
+  attachAccordionClick();
+
+  // Attach on Ajax complete for accordion returned by view.
+  $(document).ajaxComplete(function() {
+    attachAccordionClick();
   });
 })(jQuery);
