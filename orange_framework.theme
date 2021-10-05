@@ -5,8 +5,7 @@
  * Functions to support theming in the theme.
  */
 
-use Drupal\Core\Template\Attribute;
-use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_preprocess_HOOK() for list of available node type templates.
@@ -16,7 +15,7 @@ function orange_framework_preprocess_node_add_list(&$variables) {
     /** @var \Drupal\node\NodeTypeInterface $type */
     foreach ($variables['content'] as $type) {
       $variables['types'][$type->id()]['label'] = $type->label();
-      $variables['types'][$type->id()]['url'] = \Drupal::url('node.add', ['node_type' => $type->id()]);
+      $variables['types'][$type->id()]['url'] = Url::fromRoute('node.add', ['node_type' => $type->id()]);
     }
   }
 }
@@ -32,7 +31,7 @@ function orange_framework_preprocess_block_content_add_list(&$variables) {
     foreach ($variables['content'] as $type) {
       $variables['types'][$type->id()]['label'] = $type->label();
       $options = ['query' => \Drupal::request()->query->all()];
-      $variables['types'][$type->id()]['url'] = \Drupal::url('block_content.add_form', ['block_content_type' => $type->id()], $options);
+      $variables['types'][$type->id()]['url'] = Url::fromRoute('block_content.add_form', ['block_content_type' => $type->id()], $options);
     }
   }
 }
